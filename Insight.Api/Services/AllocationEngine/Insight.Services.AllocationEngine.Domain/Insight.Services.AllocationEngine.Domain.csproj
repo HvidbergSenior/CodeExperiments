@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Customers\Insight.Customers.Domain\Insight.Customers.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Modules\FuelTransactions\Insight.FuelTransactions.Domain\Insight.FuelTransactions.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Modules\IncomingDeclarations\Insight.IncomingDeclarations.Domain\Insight.IncomingDeclarations.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

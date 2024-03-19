@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Bool ValueObject Class</Title>
+            <Shortcut>boolval</Shortcut>
+            <Description>Creates a new Bool ValueObject class</Description>
+            <Author>GitHub Copilot</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>ValueObjectName</ID>
+                    <Default>ValueObjectName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+using Insight.BuildingBlocks.Domain;
+
+namespace Insight.Declarations.Domain.Incoming
+{
+    public sealed class $ValueObjectName$ : ValueObject
+    {
+        public bool Value { get; private set; }
+
+        private $ValueObjectName$()
+        {
+            Value = false;
+        }
+
+        private $ValueObjectName$(bool value)
+        {
+            Value = value;
+        }
+
+        public static $ValueObjectName$ Create(bool value)
+        {
+            return new $ValueObjectName$(value);
+        }
+
+        public static $ValueObjectName$ None()
+        {
+            return new $ValueObjectName$();
+        }
+    }
+}
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

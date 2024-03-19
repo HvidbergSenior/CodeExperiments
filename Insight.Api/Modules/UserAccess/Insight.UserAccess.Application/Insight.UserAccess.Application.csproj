@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>Insight.UserAccess.Test</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\..\Services\BusinessCentralConnector\Insight.Services.BusinessCentralConnector.Integration\Insight.Services.BusinessCentralConnector.Integration.csproj" />
+    <ProjectReference Include="..\..\..\Services\Insight.Services.EmailSender.Service\Insight.Services.EmailSender.Service.csproj" />
+    <ProjectReference Include="..\..\Customers\Insight.Customers.Integration\Insight.Customers.Integration.csproj" />
+    <ProjectReference Include="..\Insight.UserAccess.Domain\Insight.UserAccess.Domain.csproj" />
+    <ProjectReference Include="..\Insight.UserAccess.Integration\Insight.UserAccess.Integration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ForgotPassword\" />
+  </ItemGroup>
+
+</Project>

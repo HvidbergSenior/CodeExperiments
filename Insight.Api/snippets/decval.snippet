@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Decimal ValueObject Class</Title>
+            <Shortcut>decval</Shortcut>
+            <Description>Creates a new Decimal ValueObject class</Description>
+            <Author>GitHub Copilot</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>ValueObjectName</ID>
+                    <Default>ValueObjectName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+using Insight.BuildingBlocks.Domain;
+
+namespace Insight.Declarations.Domain.Incoming
+{
+    public sealed class $ValueObjectName$ : ValueObject
+    {
+        public decimal Value { get; private set; }
+
+        private $ValueObjectName$()
+        {
+            Value = decimal.Zero;
+        }
+
+        private $ValueObjectName$(decimal value)
+        {
+            Value = value;
+        }
+
+        public static $ValueObjectName$ Create(decimal value)
+        {
+            return new $ValueObjectName$(value);
+        }
+
+        public static $ValueObjectName$ Empty()
+        {
+            return new $ValueObjectName$();
+        }
+    }
+}
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

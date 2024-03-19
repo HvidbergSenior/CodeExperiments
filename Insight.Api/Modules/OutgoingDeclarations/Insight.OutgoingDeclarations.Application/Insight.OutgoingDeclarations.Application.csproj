@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Insight.OutgoingDeclarations.Test</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+      <ProjectReference Include="..\..\FuelTransactions\Insight.FuelTransactions.Integration\Insight.FuelTransactions.Integration.csproj" />
+      <ProjectReference Include="..\..\IncomingDeclarations\Insight.IncomingDeclarations.Integration\Insight.IncomingDeclarations.Integration.csproj" />
+      <ProjectReference Include="..\Insight.OutgoingDeclarations.Domain\Insight.OutgoingDeclarations.Domain.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="ExcelMapper" Version="5.2.542" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+@userName = test@user.com
+@password = Test1234!
+@baseUri = https://localhost:7084
+
+# @name createUser
+POST {{baseUri}}/api/users/register HTTP/1.1
+Content-type: application/json
+
+{
+  "username": "{{userName}}",
+  "email": "{{userName}}",
+  "role": 2,
+  "password": "{{password}}",
+  "confirmPassword": "{{password}}"
+}
+
+### And then we login
+
+# @name login
+POST {{baseUri}}/api/users/login HTTP/1.1
+Content-type: application/json
+
+{
+  "username": "{{userName}}",  
+  "password": "{{password}}"
+}
+
+#### Variable Response
+@accessHeader = Bearer {{login.response.body.$.accessToken}}
+
+# @name Get Declarations
+GET {{baseUri}}/certificates HTTP/1.1
+Authorization: {{accessHeader}}

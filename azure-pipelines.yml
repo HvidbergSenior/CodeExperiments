@@ -1,0 +1,74 @@
+trigger:
+  - master
+  - development
+  - devops
+
+
+
+variables:
+  vmImage: 'ubuntu-latest'
+  artifactName: 'InsightWebApp'
+  solutionPath: '**/Insight.sln'
+  clientAppPath: 'Insight.Api/UI/Insight.WebApplication/ClientApp'
+  buildConfiguration: 'Release'
+
+jobs:
+  - job: BuildWebApp
+    displayName: Build ${{ variables.artifactName }} for ${{ variables.buildConfiguration }}
+
+    pool:
+      vmImage: ${{ variables.vmImage }}
+
+    steps:
+      # .Net Build
+      - task: UseDotNet@2
+        displayName: 'Use dotnet version'
+        inputs:
+          version: '7.x'
+
+      - task: DotNetCoreCLI@2
+        displayName: 'Build $(artifactName)'
+        inputs:
+          command: 'build'
+          projects: '$(solutionPath)'
+          arguments: '--configuration $(buildConfiguration)'
+
+      - task: DotNetCoreCLI@2
+        displayName: 'Test $(artifactName)'
+        inputs:
+          command: 'test'
+          projects: '$(solutionPath)'
+          arguments: '--configuration $(buildConfiguration)'
+
+      # NPM Build
+      - task: UseNode@1
+        inputs:
+          version: '20.x'
+
+      - task: Npm@1
+        displayName: 'Install ClientApp frontend packages.'
+        inputs:
+          command: 'ci'
+          workingDir: '$(clientAppPath)'
+
+      - task: Npm@1
+        displayName: 'Build ClientApp frontend'
+        inputs:
+          command: 'custom'
+          customCommand: 'run build'
+          workingDir: '$(clientAppPath)'
+
+      # Publish
+      - task: DotNetCoreCLI@2
+        displayName: 'Publish $(artifactName)'
+        inputs:
+          command: 'publish'
+          publishWebProjects: true
+          arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Pipeline $(artifactName)'
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifactName: '$(artifactName)'
+

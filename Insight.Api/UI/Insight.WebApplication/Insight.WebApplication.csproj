@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+		<TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+		<IsPackable>false</IsPackable>
+		<SpaRoot>ClientApp\</SpaRoot>
+		<DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+		<SpaProxyServerUrl>https://localhost:3000</SpaProxyServerUrl>
+		<SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>1701;1702;1591;1573</NoWarn>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NoWarn>1701;1702;1591;1573</NoWarn>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Insight.Tests.End2End" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.Publisher.ApplicationInsights" Version="7.0.0" />
+		<PackageReference Include="EPPlus" Version="7.0.0" />
+		<PackageReference Include="FluentValidation" Version="11.8.0" />
+		<PackageReference Include="Marten.CommandLine" Version="6.4.0" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.HeaderPropagation" Version="7.0.5" />		
+		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+		<PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+		<PackageReference Include="Serilog.Sinks.Seq" Version="6.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+		<PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="7.0.14" />
+	</ItemGroup>
+	
+
+	<ItemGroup>
+		<!-- Don't publish the SPA source files, but do show them in the project files list -->
+		<Compile Remove="Auth\**" />
+		<Compile Remove="Controllers\TankAndGo\**" />
+		<Content Remove="$(SpaRoot)**" />
+		<Content Remove="Auth\**" />
+		<Content Remove="Controllers\TankAndGo\**" />
+		<EmbeddedResource Remove="Auth\**" />
+		<EmbeddedResource Remove="Controllers\TankAndGo\**" />
+		<None Remove="$(SpaRoot)**" />
+		<None Remove="Auth\**" />
+		<None Remove="Controllers\TankAndGo\**" />
+		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\.editorconfig" Link=".editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+	  <ProjectReference Include="..\..\Modules\BusinessCentralEntities\Insight.BusinessCentralEntities.Domain\Insight.BusinessCentralEntities.Domain.csproj" />
+	  <ProjectReference Include="..\..\Modules\BusinessCentralEntities\Insight.BusinessCentralEntities.Infrastructure\Insight.BusinessCentralEntities.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\Customers\Insight.Customers.Infrastructure\Insight.Customers.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\FuelTransactions\Insight.FuelTransactions.Infrastructure\Insight.FuelTransactions.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\IncomingDeclarations\Insight.IncomingDeclarations.Application\Insight.IncomingDeclarations.Application.csproj" />
+	  <ProjectReference Include="..\..\Modules\IncomingDeclarations\Insight.IncomingDeclarations.Infrastructure\Insight.IncomingDeclarations.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\OutgoingDeclarations\Insight.OutgoingDeclarations.Infrastructure\Insight.OutgoingDeclarations.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\PdfGenerator\Insight.PdfGenerator.Infrastructure\Insight.PdfGenerator.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\Stations\Insight.Stations.Infrastructure\Insight.Stations.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Modules\UserAccess\Insight.UserAccess.Application\Insight.UserAccess.Application.csproj" />
+	  <ProjectReference Include="..\..\Modules\UserAccess\Insight.UserAccess.Infrastructure\Insight.UserAccess.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\Services\AllocationEngine\Insight.Services.AllocationEngine.Application\Insight.Services.AllocationEngine.Application.csproj" />
+	  <ProjectReference Include="..\..\Services\BusinessCentralConnector\Insight.Services.BusinessCentralConnector.Service\Insight.Services.BusinessCentralConnector.Service.csproj" />
+	  <ProjectReference Include="..\..\Services\Insight.Services.EmailSender.Service\Insight.Services.EmailSender.Service.csproj" />
+	  <ProjectReference Include="..\..\Services\PdfGenerator\Insight.Services.PdfGenerator.Service\Insight.Services.PdfGenerator.Service.csproj" />
+	</ItemGroup>
+</Project>

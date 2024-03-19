@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="AutoFixture" Version="4.18.0" />
+		<PackageReference Include="FluentAssertions" Version="6.12.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+		<PackageReference Include="Moq" Version="4.20.70" />
+		<PackageReference Include="Testcontainers.PostgreSql" Version="3.6.0" />
+		<PackageReference Include="Testcontainers" Version="3.6.0" />
+		<PackageReference Include="xunit" Version="2.6.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="coverlet.collector" Version="3.2.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\Modules\Customers\Insight.Customers.Infrastructure\Insight.Customers.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\Customers\Insight.Customers.Tests\Insight.Customers.Tests.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\FuelTransactions\Insight.FuelTransactions.Infrastructure\Insight.FuelTransactions.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\FuelTransactions\Insight.FuelTransactions.Tests\Insight.FuelTransactions.Tests.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\IncomingDeclarations\Insight.IncomingDeclarations.Infrastructure\Insight.IncomingDeclarations.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\IncomingDeclarations\Insight.IncomingDeclarations.Test\Insight.IncomingDeclarations.Test.csproj" />
+	  <ProjectReference Include="..\..\..\Modules\OutgoingDeclarations\Insight.OutgoingDeclarations.Domain\Insight.OutgoingDeclarations.Domain.csproj" />
+	  <ProjectReference Include="..\Insight.Services.AllocationEngine.Domain\Insight.Services.AllocationEngine.Domain.csproj" />
+	  <ProjectReference Include="..\Insight.Services.AllocationEngine.Service\Insight.Services.AllocationEngine.Service.csproj" />
+	</ItemGroup>
+</Project>

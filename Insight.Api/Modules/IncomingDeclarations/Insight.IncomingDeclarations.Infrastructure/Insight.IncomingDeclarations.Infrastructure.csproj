@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="ExcelMapper" Version="5.2.542" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessCentralEntities\Insight.BusinessCentralEntities.Domain\Insight.BusinessCentralEntities.Domain.csproj" />
+    <ProjectReference Include="..\Insight.IncomingDeclarations.Application\Insight.IncomingDeclarations.Application.csproj" />
+    <ProjectReference Include="..\Insight.IncomingDeclarations.Domain\Insight.IncomingDeclarations.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

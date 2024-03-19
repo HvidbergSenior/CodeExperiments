@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>DateOnly ValueObject Class</Title>
+            <Shortcut>dateonlyval</Shortcut>
+            <Description>Creates a new DateOnly ValueObject class</Description>
+            <Author>GitHub Copilot</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>ValueObjectName</ID>
+                    <Default>ValueObjectName</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+using Insight.BuildingBlocks.Domain;
+
+namespace Insight.Declarations.Domain.Incoming
+{
+    public sealed class $ValueObjectName$ : ValueObject
+    {
+        public DateOnly Value { get; private set; }
+
+        private $ValueObjectName$()
+        {
+            Value = DateOnly.MinValue;
+        }
+
+        private $ValueObjectName$(DateOnly value)
+        {
+            Value = value;
+        }
+
+        public static $ValueObjectName$ Create(DateOnly value)
+        {
+            return new $ValueObjectName$(value);
+        }
+
+        public static $ValueObjectName$ Empty()
+        {
+            return new $ValueObjectName$();
+        }
+        
+        public static $ValueObjectName$ Today()
+        {
+            return new $ValueObjectName$(DateOnly.FromDateTime(DateTime.Today));
+        }
+    }
+}
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

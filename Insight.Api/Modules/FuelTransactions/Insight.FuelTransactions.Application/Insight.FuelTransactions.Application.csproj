@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>Insight.FuelTransactions.Tests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+		<ProjectReference Include="..\..\BusinessCentralEntities\Insight.BusinessCentralEntities.Integration\Insight.BusinessCentralEntities.Integration.csproj" />
+		<ProjectReference Include="..\Insight.FuelTransactions.Domain\Insight.FuelTransactions.Domain.csproj" />
+		<ProjectReference Include="..\Insight.FuelTransactions.Integration\Insight.FuelTransactions.Integration.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,26 @@
+export const reconciliationTranslations = {
+  reconciliationTabTitle: "Approved",
+  emptyTextForTable: "No approved declarations have been found",
+  viewDeclarationMenuItem: "View declaration",
+  editDeclarationMenuItem: "Edit declaration",
+  declarationDetailsViewTitle: "Declaration",
+  idColumnHeader: "ID",
+  companyColumnHeader: "Company",
+  countryColumnHeader: "Country",
+  storageColumnHeader: "Storage",
+  periodColumnHeader: "Period",
+  productColumnHeader: "Product",
+  supplierColumnHeader: "Supplier",
+  rawMaterialColumnHeader: "Raw material",
+  countryOfOriginColumnHeader: "Country of origin",
+  volumeColumnHeader: "Volume (L)",
+  ghgColumnHeader: "GHG reduction",
+  stateColumnHeader: "State",
+  reconcileConfirmTitle: "Approve",
+  reconcileConfirmDescription:
+    "Are you sure, you want to approve? The reconciliation will be permanent and can not be undone",
+  reconcileConfirmSubmit: "Approve",
+  snackbarMessages: {
+    saveEditSuccessfulMessage: "Successfully edited declaration",
+  },
+};

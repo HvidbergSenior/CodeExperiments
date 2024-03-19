@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+        <ProjectReference Include="..\..\..\Services\PdfGenerator\Insight.Services.PdfGenerator.Service\Insight.Services.PdfGenerator.Service.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,123 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  pipelines:
+    - pipeline: build
+      source: Insight
+      trigger:
+        branches:
+          include:
+            - master
+            - development
+            - devops
+
+variables:
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    tag: 'prod'
+  ${{ if eq(variables['Build.SourceBranchName'], 'development') }}:
+    tag: 'test'
+  ${{ if eq(variables['Build.SourceBranchName'], 'devops') }}:
+    tag: 'devops'
+  artifactFolder: 'InsightWebApp'
+  serviceConnection: 'BiofuelExpressInsight(6963cabb-d678-4e48-be5f-a3dc901b7b73)'
+  healthCheckTimeoutSeconds: 180
+  healthCheckMaximumRetryCount: 12
+  healthCheckRetryIntervalSec: 10
+  webAppName: '$(tag)-insight-app'
+  resourceGroupName: '$(tag)-insight-resources'
+  deploymentSlotName: 'pre-$(tag)'
+  deploymentServerUrl: 'https://$(webAppName)-$(deploymentSlotName).azurewebsites.net'
+
+
+
+jobs:
+  - job: DeployWebApp
+    displayName: Deploy ${{ variables.tag }}-insight-app
+
+    steps:
+      - checkout: none
+      - download: build
+        artifact: ${{ variables.artifactFolder }}
+
+      - task: AzureAppServiceManage@0
+        displayName: Start ${{ variables.deploymentSlotName }} deployment slot
+        inputs:
+          azureSubscription: ${{ variables.serviceConnection }}
+          specifySlotOrASE: true
+          action: 'Start Azure App Service'
+          webAppName: ${{ variables.webAppName }}
+          resourceGroupName: ${{ variables.resourceGroupName }}
+          slot: ${{ variables.deploymentSlotName }}
+
+      - task: AzureAppServiceManage@0
+        displayName: Start production slot
+        inputs:
+          azureSubscription: ${{ variables.serviceConnection }}
+          specifySlotOrASE: true
+          action: 'Start Azure App Service'
+          webAppName: ${{ variables.webAppName }}
+          resourceGroupName: ${{ variables.resourceGroupName }}
+          slot: 'production'
+
+      - task: AzureWebApp@1
+        displayName: Deploy ${{ variables.webAppName }} WebApp
+        inputs:
+          azureSubscription: ${{ variables.serviceConnection }}
+          appType: webApp
+          appName: ${{ variables.webAppName }}
+          deploymentMethod: zipDeploy
+          package: '$(Pipeline.Workspace)/build/$(artifactFolder)/*.zip'
+          deployToSlotOrASE: true
+          slotName: ${{ variables.deploymentSlotName }}
+
+      - pwsh: |
+          $response = Invoke-WebRequest -MaximumRetryCount ${{ variables.healthCheckMaximumRetryCount }} -RetryIntervalSec ${{ variables.healthCheckRetryIntervalSec }}  -TimeoutSec ${{ variables.healthCheckTimeoutSeconds }} -URI ${{ variables.deploymentServerUrl }}/health
+          if($response.Content -ne "Healthy")
+          {
+            echo "The Web App was unhealthy"
+            exit -1;
+          }
+        displayName: Check deployment slot health endpoint
+
+      - pwsh: |
+          $response = Invoke-WebRequest -TimeoutSec ${{ variables.healthCheckTimeoutSeconds }} -URI ${{ variables.deploymentServerUrl }}/swagger/index.html
+        displayName: Check deployment slot swagger endpoint
+
+      - pwsh: |
+          $response = Invoke-WebRequest -TimeoutSec ${{ variables.healthCheckTimeoutSeconds }} -URI ${{ variables.deploymentServerUrl }}/swagger/v1/swagger.json
+        displayName: Check deployment slot swagger json
+
+      - pwsh: |
+          $response = Invoke-WebRequest -TimeoutSec ${{ variables.healthCheckTimeoutSeconds }} -URI ${{ variables.deploymentServerUrl }}/login
+        displayName: Check deployment slot login endpoint
+
+      - task: AzureAppServiceManage@0
+        displayName: Swap ${{ variables.webAppName }} deployment and production slots
+        inputs:
+          azureSubscription: ${{ variables.serviceConnection }}
+          action: 'Swap Slots'
+          webAppName: ${{ variables.webAppName }}
+          resourceGroupName: ${{ variables.resourceGroupName }}
+          sourceSlot: ${{ variables.deploymentSlotName }}
+          swapWithProduction: true
+
+  - job: Cleanup
+    displayName: Stop deployment slot
+    dependsOn: DeployWebApp
+    condition: always()
+
+    steps:
+      - checkout: none
+
+      - task: AzureAppServiceManage@0
+        displayName: Stop deployment slot
+        inputs:
+          azureSubscription: ${{ variables.serviceConnection }}
+          specifySlotOrASE: true
+          action: 'Stop Azure App Service'
+          webAppName: ${{ variables.webAppName }}
+          resourceGroupName: ${{ variables.resourceGroupName }}
+          slot: ${{ variables.deploymentSlotName }}

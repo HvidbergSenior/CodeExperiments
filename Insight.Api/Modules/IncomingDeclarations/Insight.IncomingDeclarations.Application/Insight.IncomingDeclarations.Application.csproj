@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        
+    </PropertyGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Insight.IncomingDeclarations.Test</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Insight.IncomingDeclarations.Domain\Insight.IncomingDeclarations.Domain.csproj" />
+      <ProjectReference Include="..\Insight.IncomingDeclarations.Integration\Insight.IncomingDeclarations.Integration.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="EPPlus" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

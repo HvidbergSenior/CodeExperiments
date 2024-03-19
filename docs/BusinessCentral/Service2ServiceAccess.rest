@@ -1,0 +1,39 @@
+@tenantId = 89efaadc-cfca-4ba1-994e-499e5ed6e241
+@clientId = 56d0b3ac-2eb9-4f8c-9240-4554719573a2
+@clientSecret = ### CHANGE ME ###
+@baseUri = https://api.businesscentral.dynamics.com
+@scope = {{baseUri}}/.default
+
+@bcEnvironmentName = 89efaadc-cfca-4ba1-994e-499e5ed6e241
+
+@url = {{baseUri}}/v2.0/{{bcEnvironmentName}}/Sandboxv20/api/BioFuel/Insight/v2.0
+
+### items, customers, vendors
+@entityName =insight_Station
+
+# @name auth
+POST https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/token HTTP/1.1
+Content-type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={{clientId}}
+&client_secret={{clientSecret}}
+&scope={{scope}}
+
+
+#### Variable Response
+@accessHeader = Bearer {{auth.response.body.$.access_token}}
+
+# @name GetCompanies
+GET {{url}}/companies HTTP/1.1
+Authorization: {{accessHeader}}
+
+#### Variable Response
+@companyId = {{GetCompanies.response.body.value.[0].id}}
+@companyUrl = {{url}}/companies({{companyId}})
+@displayName = MyItemDisplayName
+
+
+### @name GetEntities
+GET {{companyUrl}}/{{entityName}} HTTP/1.1
+Authorization: {{accessHeader}}

@@ -1,0 +1,21 @@
+/* DINOT */
+@font-face {
+    font-family: "DINOT";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./DINOT-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DINOT";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./DINOT-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DINOT";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./DINOT-Black.ttf") format("truetype");
+}

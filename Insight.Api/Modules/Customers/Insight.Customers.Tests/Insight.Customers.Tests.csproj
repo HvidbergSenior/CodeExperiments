@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+		<RootNamespace>Insight.Customers.Tests</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>Insight.Services.AllocationEngine.Service.AllocationEngine.Tests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoFixture" Version="4.18.0" />
+        <PackageReference Include="FluentAssertions" Version="6.12.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="xunit" Version="2.6.1" />
+        <PackageReference Include="Moq" Version="4.20.70" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="6.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Services\BusinessCentralConnector\Insight.Services.BusinessCentralConnector.Service\Insight.Services.BusinessCentralConnector.Service.csproj" />
+      <ProjectReference Include="..\Insight.Customers.Application\Insight.Customers.Application.csproj" />
+      <ProjectReference Include="..\Insight.Customers.Infrastructure\Insight.Customers.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

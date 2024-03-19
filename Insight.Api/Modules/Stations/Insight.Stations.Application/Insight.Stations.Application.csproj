@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\..\Services\BusinessCentralConnector\Insight.Services.BusinessCentralConnector.Integration\Insight.Services.BusinessCentralConnector.Integration.csproj" />
+    <ProjectReference Include="..\Insight.Stations.Domain\Insight.Stations.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

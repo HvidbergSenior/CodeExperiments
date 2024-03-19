@@ -1,0 +1,1 @@
+export const VITE_API_PATH = "https://localhost:7084";

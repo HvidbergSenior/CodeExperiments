@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Insight.OutgoingDeclarations.Application\Insight.OutgoingDeclarations.Application.csproj" />
+      <ProjectReference Include="..\Insight.OutgoingDeclarations.Domain\Insight.OutgoingDeclarations.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.24" />
+    </ItemGroup>
+
+</Project>

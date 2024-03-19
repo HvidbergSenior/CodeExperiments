@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Insight.Customers.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Insight.BuildingBlocks\Insight.BuildingBlocks.csproj" />
+      <ProjectReference Include="..\..\..\Services\BusinessCentralConnector\Insight.Services.BusinessCentralConnector.Integration\Insight.Services.BusinessCentralConnector.Integration.csproj" />
+      <ProjectReference Include="..\..\UserAccess\Insight.UserAccess.Integration\Insight.UserAccess.Integration.csproj" />
+      <ProjectReference Include="..\Insight.Customers.Domain\Insight.Customers.Domain.csproj" />
+      <ProjectReference Include="..\Insight.Customers.Integration\Insight.Customers.Integration.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Insight.Customers.Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+</Project>
