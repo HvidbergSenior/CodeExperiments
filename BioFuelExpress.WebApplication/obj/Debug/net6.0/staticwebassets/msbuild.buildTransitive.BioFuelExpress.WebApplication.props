@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\BioFuelExpress.WebApplication.props" />
+</Project>

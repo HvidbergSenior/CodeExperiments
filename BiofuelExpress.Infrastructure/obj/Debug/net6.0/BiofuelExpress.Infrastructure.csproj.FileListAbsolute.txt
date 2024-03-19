@@ -1,0 +1,17 @@
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.Infrastructure.deps.json
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.Infrastructure.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.Infrastructure.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.Domain.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.Domain.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.csproj.AssemblyReference.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.AssemblyInfoInputs.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.AssemblyInfo.cs
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.csproj.CopyComplete
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\refint\BioFuelExpress.Infrastructure.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\BioFuelExpress.Infrastructure.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Infrastructure\obj\Debug\net6.0\ref\BioFuelExpress.Infrastructure.dll

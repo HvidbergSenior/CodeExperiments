@@ -1,0 +1,12 @@
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.deps.json
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.dll
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.pdb
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.csproj.AssemblyReference.cache
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.AssemblyInfoInputs.cache
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.AssemblyInfo.cs
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.csproj.CoreCompileInputs.cache
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.dll
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\refint\BioFuelExpress.BuildingBlocks.dll
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\BioFuelExpress.BuildingBlocks.pdb
+C:\Mjolner-code\BioFuelExpress\BioFuelExpress.BuildingBlocks\obj\Debug\net6.0\ref\BioFuelExpress.BuildingBlocks.dll

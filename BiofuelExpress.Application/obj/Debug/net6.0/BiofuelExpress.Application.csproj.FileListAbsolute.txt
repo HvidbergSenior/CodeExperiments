@@ -1,0 +1,17 @@
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.Application.deps.json
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.Application.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.Application.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.Domain.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.BuildingBlocks.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\bin\Debug\net6.0\BioFuelExpress.Domain.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.csproj.AssemblyReference.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.AssemblyInfoInputs.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.AssemblyInfo.cs
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.csproj.CoreCompileInputs.cache
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.csproj.CopyComplete
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\refint\BioFuelExpress.Application.dll
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\BioFuelExpress.Application.pdb
+C:\Mjolner-code\BioFuelExpress\BiofuelExpress.Application\obj\Debug\net6.0\ref\BioFuelExpress.Application.dll
